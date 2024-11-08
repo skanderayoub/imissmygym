@@ -55,7 +55,7 @@
   .middle {    
     display: flex !important;
     position: relative !important;
-    width: 50% !important;
+    width: 75% !important;
   }
 
   .right {
@@ -85,12 +85,6 @@
     height: 200px !important;
   }
 
-  .spotify {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  }
 }
 
 @media screen and (max-height: 665px) {
