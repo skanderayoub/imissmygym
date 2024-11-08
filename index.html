@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="Library, Virtual, Ambience, Music, Study, Relax, Background Noise">
+		<meta name="author" content="Ellie Xing">
+		<title>i miss my gym</title>
+		<link rel="icon" type="image/PNG" href="assets/favicon.PNG"/>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&display=swap" rel="stylesheet">
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	</head>
+	<body>
+
+		<section class="header">
+			<div class="nav-links">
+				<button id="modalButton">about</button>
+				<div>
+					<a href="https://www.paypal.com/paypalme/Skan97" target="_blank">
+						<button>Buy Me a Coffee</button>
+					</a>				</div>
+			</div>
+			<div id="myModal" class="modal">
+				<div class="modal-content">
+				  <span class="close">&times;</span>
+				  <center><h2>about</h2></center><br>
+				  <p>Assbiiiiiiiw.</p>
+			  </div>
+			  </div>
+		</section>	
+
+		<section class="content">
+			<div class="left">
+				<div class="text-box">
+					<h1>I miss my Gym</h1>
+					<p>fiiiiiit.</p>
+				</div>
+
+				<div class="container">
+					<input type="text" class="txtb" placeholder="Add a task">
+					<div class="notcomp">
+						<h3>Not Completed</h3>
+					</div>
+
+					<div class="comp">
+						<h3>Completed</h3>
+					</div>
+				</div>
+
+				<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/7mZZkjpyoY83wHbssEtzNF?utm_source=generator&theme=0" width="300" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+				<script type="text/javascript">
+					$(".txtb").on("keyup",function(e){
+						if(e.keyCode==13 && $(".txtb").val() != "") {
+							var task = $("<div class='task'></div>").text($(".txtb").val());
+
+							var del = $("<i class='fas fa-trash-alt'></div>").click(function(){
+								var p=$(this).parent();
+								p.fadeOut(function(){
+									p.remove();
+								})
+							});
+
+							var check = $("<i class='fas fa-check'></div>").click(function(){
+								var p=$(this).parent();
+								p.fadeOut(function(){
+									$(".comp").append(p);
+									p.fadeIn();
+								});
+								$(this).remove();
+							});
+
+							task.append(del, check);
+							$(".notcomp").append(task);
+
+							$(".txtb").val("");
+						}
+				});
+				</script>
+			</div>
+
+			<div class="middle">
+				<img src="assets/image.PNG" alt="library sketch" class="illustration">
+			</div>
+
+			<div class="right">
+				<div class="massPause">
+					<p id="pauseNotice"> Pause all &nbsp;</p>
+					<input type="checkbox" id="pauseAll" onclick="pauseAll()">
+				</div>
+				<div class="audio unpressed">
+					<span>
+						<p> Weights &nbsp;</p>
+						<button id="play-0" onclick="playSound(0)"></button>
+					</span>
+					<audio loop id="0">
+						<source src="assets/594227__21100449__squeaky-gym-machine-chest-compressions.wav" type="audio/mpeg">
+						<p> Your browser doesn't support HTML 5 sounds.</p>
+					</audio>
+					<audio loop id="0">
+						<source src="assets/audio_hero_ExerciseWeightRoom_DIGIH04-24.mp3" type="audio/mpeg">
+						<p> Your browser doesn't support HTML 5 sounds.</p>
+					</audio>
+					<audio loop id="0">
+						<source src="assets/655010__jdminny__weights.mp3" type="audio/mpeg">
+						<p> Your browser doesn't support HTML 5 sounds.</p>
+					</audio>
+					<audio loop id="0">
+						<source src="assets/340037__iesp__treadmill-beeping-speed-increasing-and-running.wav" type="audio/mpeg">
+						<p> Your browser doesn't support HTML 5 sounds.</p>
+					</audio>
+					<audio loop id="0">
+						<source src="assets/smartsound_SPORT_GYM_Cable_Machine_Old_Pull_And_Drop_Sequence_Hard_Long_01.mp3" type="audio/mpeg">
+						<p> Your browser doesn't support HTML 5 sounds.</p>
+					</audio>
+					<span>
+						<div class="volume-control" id="vol"></div>
+						<input type="range" onchange="changeVolume(0, this.value)" min="0" max="1" step="0.025" value="0.70" class="vol-control">
+					</span>
+				</div>
+
+				<div class="audio unpressed">
+					<span>
+						<p> Male working out &nbsp;</p>
+						<button id="play-5" onclick="playSound(5)"></button>
+					</span>
+					<audio loop id="5">
+						<source src="assets/male.wav" type="audio/mpeg">
+						<p> Your browser doesn't support HTML 5 sounds.</p>
+					</audio>
+					<span>
+						<div class="volume-control" id="vol"></div>
+						<input type="range" onchange="changeVolume(5, this.value)" min="0" max="1" step="0.025" value="0.70" class="vol-control">
+					</span>
+				</div>
+
+				<div class="audio unpressed">
+					<span>
+						<p> Female working out &nbsp;</p>
+						<button id="play-1" onclick="playSound(1)"></button>
+					</span>
+					<audio loop id="1">
+						<source src="assets/female.wav" type="audio/mpeg">
+						<p> Your browser doesn't support HTML 5 sounds.</p>
+					</audio>
+					<span>
+						<div class="volume-control" id="vol"></div>
+						<input type="range" onchange="changeVolume(1, this.value)" min="0" max="1" step="0.025" value="0.70" class="vol-control">
+					</span>
+				</div>
+				
+				<div class="audio unpressed">
+					<span>
+						<p> Vending machine &nbsp;</p>
+						<button id="play-2" onclick="playSound(2)"></button>
+					</span>
+					<audio loop id="2">
+						<source src="assets/vending-machine2.mp3" type="audio/mpeg">
+						<p> Your browser doesn't support HTML 5 sounds.</p>
+					</audio>
+					<audio loop id="2">
+						<source src="assets/spooky-vending-machine-hum-20000.mp3" type="audio/mpeg">
+						<p> Your browser doesn't support HTML 5 sounds.</p>
+					</audio>
+					<span>
+						<div class="volume-control" id="vol"></div>
+						<input type="range" onchange="changeVolume(2, this.value)" min="0" max="1" step="0.025" value="0.70" class="vol-control">
+					</span>
+				</div>
+
+				<div class="audio unpressed">
+					<span>
+						<p> Bathroom &nbsp;</p>
+						<button id="play-3" onclick="playSound(3)"></button>
+					</span>
+					<audio loop id="3">
+						<source src="assets/bathroom.wav" type="audio/mpeg">
+						<p> Your browser doesn't support HTML 5 sounds.</p>
+					</audio>
+					<span>
+						<div class="volume-control" id="vol"></div>
+						<input type="range" onchange="changeVolume(3, this.value)" min="0" max="1" step="0.025" value="0.70" class="vol-control">
+					</span>
+				</div>
+
+				<div class="audio unpressed">
+					<span>
+						<p> Locker &nbsp;</p>
+						<button id="play-4" onclick="playSound(4)"></button>
+					</span>
+					<audio loop id="4">
+						<source src="assets/522043__garuda1982__metal-locker.wav" type="audio/mpeg">
+						<p> Your browser doesn't support HTML 5 sounds.</p>
+					</audio>
+					<span>
+						<div class="volume-control" id="vol"></div>
+						<input type="range" onchange="changeVolume(4, this.value)"min="0" max="1" step="0.025" value="0.70" class="vol-control">
+					</span>
+				</div>
+
+				<div class="audio unpressed">
+					<span>
+						<p> Jumping rope &nbsp;</p>
+						<button id="play-6" onclick="playSound(6)"></button>
+					</span>
+					<audio loop id="6">
+						<source src="assets/616862__trp__210415-skipping-rope-various-speeds-ms.wav" type="audio/mpeg">
+						<p> Your browser doesn't support HTML 5 sounds.</p>
+					</audio>
+					<span>
+						<div class="volume-control" id="vol"></div>
+						<input type="range" onchange="changeVolume(6, this.value)"min="0" max="1" step="0.025" value="0.70" class="vol-control">
+					</span>
+				</div>
+
+				<div class="audio unpressed">
+					<span>
+						<p> Boxing bag &nbsp;</p>
+						<button id="play-7" onclick="playSound(7)"></button>
+					</span>
+					<audio loop id="7">
+						<source src="assets/boxing-with-bag-75715.mp3" type="audio/mpeg">
+						<p> Your browser doesn't support HTML 5 sounds.</p>
+					</audio>
+					<span>
+						<div class="volume-control" id="vol"></div>
+						<input type="range" onchange="changeVolume(7, this.value)"min="0" max="1" step="0.025" value="0.70" class="vol-control">
+					</span>
+				</div>
+
+				<div class="audio unpressed">
+					<span>
+						<p> Assbiw &nbsp;</p>
+						<button id="play-8" onclick="playSound(8)"></button>
+					</span>
+					<audio loop id="8">
+						<source src="assets/Assbiw.mp3" type="audio/mpeg">
+						<p> Your browser doesn't support HTML 5 sounds.</p>
+					</audio>
+					<span>
+						<div class="volume-control" id="vol"></div>
+						<input type="range" onchange="changeVolume(8, this.value)"min="0" max="1" step="0.025" value="0.70" class="vol-control">
+					</span>
+				</div>
+
+			</div>
+
+		</section>
+
+		<script src="script.js"></script>
+	</body>
+</html>
+
+
